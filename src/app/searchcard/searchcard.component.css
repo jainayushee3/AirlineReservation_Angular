@@ -1,0 +1,34 @@
+.wrapper{
+  width: 500px;
+  height:100%;
+  /* background-color: brown; */
+  /* margin-left: 15%; */
+  border: 1px #ccc solid;
+  padding:20px;
+  background-color: #fff;
+  /* border-radius: 10px; */
+  background-color: rgba(245, 245, 245, 0.6);
+  /* opacity: .4; */
+  
+}
+
+.logo{
+  background-color: #707784;
+  width: 400px;
+  height:150px;
+}
+
+/* .card-content{
+  margin-top: 150px;
+} */
+
+.centrebtn{
+  Display: flex;
+  Justify-content : center;
+  Align-items : center
+}
+
+.color{
+  background-color: #707784;
+  color:white;
+}
