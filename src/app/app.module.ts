@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
-import { BlankComponent } from './blank/blank.component';
 import { SearchcardComponent } from './searchcard/searchcard.component';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { SearchcardComponent } from './searchcard/searchcard.component';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    BlankComponent,
     SearchcardComponent
   ],
   imports: [

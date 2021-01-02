@@ -1,3 +1,57 @@
-.navbar{
-  background: transparent;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #0A1650;
+}
+
+li, a, button{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 6%;
+}
+
+.nav_links{
+  list-style: none;
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease-in;
+}
+
+
+.nav_links li a:hover{
+  color: aqua;
+}
+
+button{
+  padding: 7px 25px;
+  background-color:#5D99F5;
+  border: none;
+  border-radius: 50px;
+}
+
+h2{
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 40px; 
+  color: #ecf0f1;
+  /* cursor: pointer; */
+  margin-right: auto;
 }
