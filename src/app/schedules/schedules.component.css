@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    line-height: 1.8em;
+    text-transform: none;
+    letter-spacing: .075em;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    color: #000000;
+    
+    display: block;
+    background-image: url('https://image.shutterstock.com/image-vector/flying-airplane-express-delivery-shipping-260nw-1564573663.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    
+  }
+ 
+  .title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  h1, h2, h3, h4 {
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    font-size: 3rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+  }

@@ -1,0 +1,42 @@
+<app-header-links></app-header-links>
+
+
+
+<table class="table table-hover table-bordered table-responsive" align="center" style="padding:20px">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">Schedule Id</th>
+        <th scope="col">Flight Id</th>
+        <th scope="col">Source Location</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Arrival Time</th>
+        <!--<th scope="col">Duration</th>-->
+        <th scope="col">Daparture Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Business Class Ticket Price</th>
+        <th scope="col">First Class Ticket Price</th>
+        <th scope="col">Economic Class Ticket Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let schedule of schedules">
+        <th scope="row">{{ schedule.Schedule_ID }}</th>
+        <td>{{ schedule.Flight_ID }}</td>
+        <td>{{ schedule.Source_Loc }}</td>
+        <td>{{ schedule.Destination }}</td>
+        <td>{{ schedule.Dep_Time }}</td>
+        <td>{{ schedule.Arr_Time }}</td>
+        <!--<td>{{ schedule.Duration }}</td>-->
+        <td>{{ schedule.Dep_Date }}</td>
+        <td>{{ schedule.status }}</td>
+        <td>{{ schedule.Price_BC }}</td>
+        <td>{{ schedule.Price_FC }}</td>
+        <td>{{ schedule.Price_EC }}</td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+  
+  

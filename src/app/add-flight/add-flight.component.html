@@ -1,0 +1,68 @@
+<app-header-links></app-header-links>
+
+
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="row">
+          <div class="col text-center title">
+            <h1>Add New Flight</h1>
+          </div>
+        </div>
+
+
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Business Class Capacity
+            </label>
+            <input class="form-control" placeholder="Business Class Capacity" type="number"
+              [(ngModel)]="flight.BC_Capacity">
+          </div>
+        </div>
+        <br>
+
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              First Class Capacity
+            </label>
+            <input class="form-control" placeholder="First Class Capacity" type="number"
+              [(ngModel)]="flight.FC_Capacity">
+          </div>
+        </div>
+        <br>
+
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Economic Class Capacity
+            </label>
+            <input class="form-control" placeholder="Economic Class Capacity" type="number"
+              [(ngModel)]="flight.EC_Capacity">
+          </div>
+        </div>
+        <br>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Status
+            </label>
+            <input class="form-control" placeholder="Flight Status/Condition" type="text" [(ngModel)]="flight.status">
+          </div>
+        </div>
+
+        <div class="row justify-content-start mt-4">
+          <div class="col">
+            <button (click)="InsertFlight()" class="btn btn-primary mt-4">Add</button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</body>

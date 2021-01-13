@@ -1,0 +1,96 @@
+<app-header-links></app-header-links>
+ 
+
+<body>
+    <h3>Please select the schedule to be deleted!</h3>
+    <select #sid (change)="findSchedule(sid)">
+        <option *ngFor="let schedule of schedules" [value]="schedule.Schedule_ID">{{ schedule.Schedule_ID }}</option>
+    </select>
+    <div *ngIf="schedule.Schedule_ID!=0" class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+                <div class="row">
+                    <div class="col text-center title">
+                        <h1>Delete Schedule</h1>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Schedule Id </label>
+                        {{ schedule.Schedule_ID }}
+                    </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Flight Id </label>
+                        {{ schedule.Flight_ID }}
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Source</label>
+                        {{ schedule.Source_Loc }}
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Destination </label>
+                        {{ schedule.Destination }}
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Departure time </label>
+                        {{ schedule.Dep_Time }} </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Arrival time </label>
+                        {{ schedule.Arr_Time }} </div>
+                </div>
+                <!--<div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Duration </label>
+                        {{schedule.Duration }} </div>
+                </div>-->
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Departure Date </label>
+                        {{schedule.Dep_Date}} </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Status</label>
+                        {{schedule.status}} </div>
+                </div>
+
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Business Class Ticket Price</label>
+                        {{schedule.Price_BC}} </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>First Class Ticket Price</label>
+                        {{schedule.Price_FC}} </div>
+                </div>
+                <div class="row align-items-center">
+
+                    <div class="col mt-4"><label>Economic Class Ticket Price</label>
+                        {{schedule.Price_EC}} </div>
+                </div>
+
+
+                <div class="row justify-content-start mt-4">
+                    <div class="col">
+                        <button (click)="deleteScheduleData()" class="btn btn-primary mt-4">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

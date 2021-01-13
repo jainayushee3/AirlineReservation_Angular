@@ -1,0 +1,29 @@
+*{
+  margin:0;
+  padding:20px;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+
+.left{
+  flex:5;
+  display: flex;
+  flex-direction: column;
+}
+
+.right{
+  flex:5;
+  display: flex;
+  flex-direction: column;
+}
+
+.centrebtn{
+  Display: flex;
+  Justify-content : center;
+  Align-items : center
+}

@@ -1,0 +1,30 @@
+<div class="ticket-container">
+    <div *ngFor="let ticket of receipts">
+        
+            <div class="ticket-details">
+                <span class="ticket-id">
+                    <div id="tid"  >Ticket ID : {{ticket.Receipt_ID}}</div>
+                    <div id="tsource" >Source : {{ticket.Source_Loc}}</div> 
+                    <div id="tdes"> Destination : {{ticket.Destination}} </div>
+                    <div id="tdate"> Date of Journey : {{ticket.Dep_Date}} </div>
+                    <div id="tseats"> Seats : {{ticket.seat_number_list}} </div>
+                    <div id="tstatus"> Status : {{ticket.Tickets_Status}} </div>
+                </span>
+    
+                <button class="btn" (click)="cancel(ticket.Receipt_ID)">Cancel Ticket</button>
+                <!-- <div class="overlay" *ngIf="popup">
+                    <div class="popup">
+                        <h2>Cancel ticket?</h2>
+                        <a class="close" (click)="popup = false">&times;</a>
+                        <div class="content" [class.changestyle]>
+                      <button class="btn" (click)="cancel(ticket.Receipt_ID)">Yes</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        
+        <hr>
+    </div>
+    </div>
+    

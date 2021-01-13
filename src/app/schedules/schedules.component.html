@@ -1,0 +1,43 @@
+<app-header-links></app-header-links>
+
+
+<body>
+  <div class="container" style="padding: 30px;">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"> <a  routerLink="ViewSchedules">View Flight Schedules</a>
+            </h5>
+          </div>
+        </div>
+        <br>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><a  routerLink="AddSchedule">Add Flight Schedules</a> </h5>
+          </div>
+        </div>
+        <br>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><a routerLink="UpdateSchedule">Update Flight Schedules</a>
+            </h5>
+          </div>
+        </div>
+        <br>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><a  routerLink="DeleteSchedule">Delete Flight Schedules</a></h5>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</body>

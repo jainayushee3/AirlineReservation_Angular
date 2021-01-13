@@ -1,0 +1,31 @@
+
+  <div class="card ">
+    <div class="leftside">
+    <h6>{{oneWay.Source_Loc}}</h6>
+    <h6>{{oneWay.Destination}}</h6>
+    <h6>{{oneWay.Dep_Date | date}}</h6>
+    <h6>{{oneWay.Dep_Time | date:'shortTime'}}</h6>
+  </div>
+  
+    <div class="rightside">
+      <div class="row">
+        <h5>First Class: Rs. {{oneWay.Price_FC}}</h5>
+    <!-- <a routerLink="/passengerdetails">
+    <button class="btn btn-info" style="float:right">Buy First Class Tickets</button></a> -->
+    <input type="radio" name="To" id="selected_flt_FC"  (change)="onCheckFC()">
+  </div>
+    <div class="row">
+      <h5>Business Class: Rs. {{oneWay.Price_BC}}</h5>
+    <!-- <a routerLink="/passengerdetails">
+      <button class="btn btn-info" style="float:right">Buy Business Class Tickets</button></a> -->
+      <input type="radio" name="To" id="selected_flt_BC"  (change)="onCheckBC()">
+    </div>
+      <div class="row">
+        <h5>Economy Class: Rs. {{oneWay.Price_EC}}</h5>
+      <!-- <a routerLink="/passengerdetails">
+        <button class="btn btn-info" style="float:right">Buy Economy Class Tickets</button></a> -->
+        <input type="radio" name="To" id="selected_flt_EC"  (change)="onCheckEC()">
+      </div>
+      </div>
+      <!-- <input type="checkbox" name="To" id="selected_flt"  (change)="onChecked()"> -->
+  </div>

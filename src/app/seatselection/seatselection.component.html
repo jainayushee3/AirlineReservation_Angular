@@ -1,0 +1,63 @@
+
+
+<form>
+  <!-- <button (click)="disablebc()">Disable BC</button>
+  <button (click)="disablefc()">Disable FC</button>
+  <button (click)="disableec()">Disable EC</button> -->
+ 
+ 
+  
+  <div class="container">
+  
+     <div class="fc" [class.changestyle]="check"  >
+       <li class="row row--1" >
+             <ol class="seats" >
+               <div *ngFor="let item of seats1;let i=index">
+                 <li class="seat" [class.changeseat]="item.status">
+                   <input type="checkbox"  name="{{item.id}}" 
+                   (change)="onChange()" [(ngModel)]="item.isSelected" />
+                 <label for="{{item.id}}">{{item.id}}</label>
+               </li>
+              </div>
+             </ol>
+       </li>
+     </div>
+     <div class="bc"[class.changestyle]="check1" [class.changestyle]="alert" >
+       <li class="row row--2">
+           <ol class="seats" type="A">
+             <div *ngFor="let item of seats2;let i=index">
+               <li class="seat" [class.changeseat]="item.status">
+                  <input type="checkbox" name="{{item.id}}" 
+                  (change)="onChange()" [(ngModel)]="item.isSelected" />
+               <label for="{{item.id}}">{{item.id}}</label>
+             </li>
+             </div>
+           </ol>
+     </li>
+   </div>
+   <div class="ec" [class.changestyle]="check2">
+     <li class="row row--3">
+         <ol class="seats" type="A">
+           <div *ngFor="let item of seats3;let i=index">
+             <li class="seat alert" >
+                <input type="checkbox" name="{{item.id}}" [class.changeseat]="item.status"
+                (change)="onChange()" [(ngModel)]="item.isSelected" />
+             <label for="{{item.id}}">{{item.id}}</label>
+           </li>
+           </div>
+         </ol>
+   </li>
+ </div>
+     
+     
+    
+ </div>
+ <div class="buttonV">
+   
+   <button class="btn btn-info"(click)="onsubmit()">Proceed to payment</button>
+   <br>
+ 
+ </div>
+ 
+ </form>
+ 

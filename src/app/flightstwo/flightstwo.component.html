@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+
+  <div class="left">
+    <div *ngFor="let f of oneWay" >
+  <app-flightto [oneWay]="f"></app-flightto></div>
+</div>
+
+
+  <div class="right">
+    <div  *ngFor="let f of twoWay">
+  <app-flightfrom [twoWay]="f"></app-flightfrom></div></div>
+
+</div>
+
+<div class="centrebtn">
+  <a routerLink="/passengerdetails">
+  <button class="btn btn-info">Submit</button></a>
+</div>

@@ -1,0 +1,68 @@
+<app-header-links></app-header-links>
+
+
+<body>
+  <h3>Please select the flight to be deleted!</h3>
+  <select #fid (change)="findFlight(fid)">
+    <option *ngFor="let flight of flights" [value]="flight.Flight_ID">{{ flight.Flight_ID }}</option>
+  </select>
+  <div *ngIf="flight.Flight_ID!=0" class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="row">
+          <div class="col text-center title">
+            <h1>Delete Flight</h1>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Flight Id :
+            </label>
+            {{ flight.Flight_ID }}
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Business Class Capacity :
+            </label>
+            {{ flight.BC_Capacity }}
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              First Class Capacity :
+            </label>
+            {{ flight.FC_Capacity }}
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Economic Class Capacity :
+            </label>
+            {{ flight.EC_Capacity }}
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Flight Status :
+            </label>
+            {{ flight.status }}
+          </div>
+        </div>
+
+        <div class="row justify-content-start mt-4">
+          <div class="col">
+            <button (click)="deleteFlightData()" class="btn btn-primary mt-4">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>

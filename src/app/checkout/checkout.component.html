@@ -1,0 +1,90 @@
+<div class="wrapper">
+<div class="row">
+  <div class="col">
+    <div class="container">
+      <form [formGroup]="checkoutForm" >
+        <div class="row">
+          <div class="col">
+            <h3>Payment</h3>
+            
+            
+            <label for="cname">Name on Card</label>
+            <input class="form-control" type="text" id="cname" name="cardname" placeholder="Enter your name" formControlName="name"><br>
+            <span style="color: red;" class="error" *ngIf="f.name.invalid && f.name.touched">name is invalid</span> <br>
+
+            <label for="ccnum">Credit card number</label>
+            <input class="form-control"type="text" id="ccnum" name="cardnumber" placeholder="Enter your card number" formControlName="card_number" minlength="16" maxlength="16"><br>
+            <span style="color: red;"class="error" *ngIf="f.card_number.invalid && f.card_number.touched">Card number is invalid</span><br>
+
+            <label for="expmonth">Exp Month</label>
+            <input class="form-control"type="number" id="expiry_month" name="expiry_month" placeholder="Enter Expiry month" formControlName="expiry_month" step="1" min="1" max="12"><br>
+            <span style="color: red;" class="error" *ngIf="f.expiry_month.hasError('max')|| f.expiry_month.invalid && f.expiry_month.touched || f.expiry_month.hasError('min')">Expiry month is invalid</span><br>
+
+            <div class="row">
+              <div class="col">
+                <label for="expyear">Exp Year</label>
+                <input class="form-control" type="number" id="expiry_year" name="expiry_year" placeholder="Enter expiry year" formControlName="expiry_year" step="1" min="2021" max="2026"><br>
+                <span style="color: red;" class="error" *ngIf="f.expiry_year.hasError('max')|| f.expiry_year.invalid && f.expiry_year.touched || f.expiry_year.hasError('min')">Expiry year is invalid</span><br><br>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="cvv">CVV</label>
+                <input class="form-control" type="text" id="cvv" name="cvv" placeholder="Enter cvv" formControlName="cvv"><br>
+                <span style="color: red;" class="error" *ngIf="f.cvv.hasError('minlength') || f.cvv.hasError('minlength')  || f.cvv.invalid && f.cvv.touched">CVV is invalid</span><br>
+
+              </div>
+            </div>
+            </div>
+          </div>
+        <!-- </div> -->
+        <!-- <input type="submit" [disabled]="!checkoutForm.valid" value="Continue to checkout" class="btn btn-info btn-lg" > -->
+        <button class="btn btn-info" (click)="onProceed()" [disabled]="!checkoutForm.valid">Make Payment</button>
+        <!-- <input type="reset" id="secbtn"  value="reset" class="btn btn-warning">
+        <input type="button" id="secbtn" value="cancel" class= "btn btn-warning" > -->
+        <!-- <input type="button" [disabled]="!checkoutForm.valid" value="generate ticket" class="btn" (click)="generateticket()"> -->
+      </form>
+    </div>
+  </div>
+  <!-- <div class="col-50">
+    <div class="container">
+       <h4>No of Passengers booked<span class="price" style="color:black"><b>{{count}}</b></span></h4>
+      <div>
+      <p>username<span class="price">{{username}}</span></p>
+      <hr>
+      <p>travel date for forward journey<span class="price">{{travel_date}}</span></p>
+      <p>selected seat numbers for forward journey<span class="price">{{seat_nos}}</span></p>
+      <p>Forward journey Cost <span class="price" style="color:black"><b>{{upcost}}</b></span></p>
+      </div>
+      <hr>
+      <p>travel date for return journey<span class="price">{{return_date}}</span></p>
+      <p>selected seat numbers for return journey<span class="price">{{return_seat_nos}}</span></p>
+      <p>Return Journey Cost <span class="price" style="color:black"><b>{{downcost}}</b></span></p>
+      <hr>
+      <p>Total Amount to be paid <span class="price" style="color:black"><b>Rupees ={{upcost+downcost}}/-</b></span></p> 
+    </div>
+  </div> -->
+
+<div class="container">  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Payment Successful</h4>
+        </div>
+        <div class="modal-body">
+          <p>Congrats Your journey has been confirmed</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Show tickets</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</div>

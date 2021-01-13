@@ -1,0 +1,34 @@
+<div class="wrapper">
+<form class="form-wrapper" autocomplete="off"
+[formGroup]="passengerDetailForm">
+	<h2>
+		Passenger details:
+	</h2>
+
+	
+
+	<ul class="contacts-list">
+		<ol class="contacts-list-item">
+			<app-passenger-details  *ngFor="let childForms of contactsArray.controls" [childForm]="childForms">
+			</app-passenger-details>			
+		</ol>
+  </ul>
+  <!-- <div class="action-panel">
+    <button class="btn btn-danger" type="button">
+      Delete
+    </button>
+  </div> -->
+
+
+	<button class="btn btn-info" type="button" [hidden]="this.contact==this.flightService.searched.number_of_passengers" (click)="addContact()">Add another contact</button>
+	<br><br>
+
+	<div class="button-row">
+		
+		<button class="btn btn-success" type="submit" (click)="submitDetails()">
+			Submit
+		</button>
+	</div>
+</form>
+</div>
+

@@ -1,0 +1,30 @@
+
+.wrapper{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  height: 100%; 
+  padding:50px;
+  
+}
+
+.card{
+  width: 100%;
+  height:150px;
+  background-color: #b5d4fe;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftside{
+  flex:5;
+}
+
+.rightside{
+  flex:5;
+  display: flex;
+  flex-direction: column;
+  justify-content: centre;
+}
+
+

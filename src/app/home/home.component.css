@@ -1,20 +1,23 @@
 .wrapper{
   display:flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100%;
+
+
   flex-direction: column;
+  /* background-image: url('/assets/home.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  */
+  background-color: #023e8a;
 }
-
-
-.wrapper app-header{
+ /* app-header{
   flex:1;
-}
-
-
-
-.wrapper app-searchcard{
-  flex:9; 
-}
+} */
+ 
+ .out{
+   height: 100%;
+ }
 
 
 

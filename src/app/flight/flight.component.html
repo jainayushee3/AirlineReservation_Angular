@@ -1,0 +1,24 @@
+
+  <div class="card ">
+    <div class="leftside">
+    <h6>{{newUser.Source_Loc}}</h6>
+    <h6>{{newUser.Destination}}</h6>
+    <h6>{{newUser.Dep_Date | date}}</h6>
+    <h6>{{newUser.Dep_Time | date:'shortTime'}}</h6>
+  </div>
+  
+    <div class="rightside">
+      <div class="row">
+        <h6>Rs. {{newUser.Price_FC}}</h6>
+    <a routerLink="/passengerdetails">
+    <button class="btn btn-info" style="float:right; margin-left:10px; margin-bottom: 3px;" (click)="BuyFC()">Buy First Class Tickets</button><br></a></div>
+    <div class="row">
+      <h6>Rs. {{newUser.Price_BC}}</h6>
+    <a routerLink="/passengerdetails">
+      <button class="btn btn-info" style="float:right; margin-left:10px; margin-bottom: 3px;" (click)="BuyBC()">Buy Business Class Tickets</button><br></a></div>
+      <div class="row">
+        <h6>Rs. {{newUser.Price_EC}}</h6>
+      <a routerLink="/passengerdetails">
+        <button class="btn btn-info" style="float:right; margin-left:10px; margin-bottom: 3px;" (click)="BuyEC()">Buy Economy Class Tickets</button></a></div>
+      </div>
+  </div>

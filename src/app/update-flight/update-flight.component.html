@@ -1,0 +1,37 @@
+<app-header-links></app-header-links>
+
+
+<body>
+  <h3>Please select the flight to be updated!</h3>
+  <select #fid (change)="findFlight(fid)">
+    <option *ngFor="let flight of flights" [value]="flight.Flight_ID">{{ flight.Flight_ID }}</option>
+  </select>
+
+  <div *ngIf="flight.Flight_ID!=0" class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+        <div class="row">
+          <div class="col text-center title">
+            <h1>Update Flight</h1>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col mt-4">
+            <label>
+              Status
+            </label>
+            <input class="form-control" placeholder="Flight Status/Condition" type="text" [(ngModel)]="flight.status">
+          </div>
+        </div>
+
+        <div class="row justify-content-start mt-4">
+          <div class="col">
+            <button (click)="updateFlightData()" class="btn btn-primary mt-4">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>

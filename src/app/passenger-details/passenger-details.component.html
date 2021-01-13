@@ -1,0 +1,34 @@
+<form autocomplete="off" [formGroup]="childForm">
+<!-- <h4>
+  Contact:
+</h4> -->
+<div class="form-row-outer-wrapper">
+  <div class="input-section">
+    <div class="form-row">
+      <label class="form-label" for="name">
+        Name:
+        <!-- <span class="field-error">
+          This is a required field.
+        </span> -->
+      </label>
+      <input class="form-control" type="text" name="Name" id="Name" formControlName="Name" required>
+<!-- <div class="alert alert-danger"*ngIf="!Name.valid && Name.touched">
+<div *ngIf="Name.touched && Name.errors.required">Name can't be empty</div> -->
+<!-- <div *ngIf="userName.touched && userName.errors.minlength">Username should be atleast {​​​​​{​​​​​userName.errors.minlength}​​​​​}​​​​​</div> -->
+</div>
+
+    </div>
+    <br>
+
+    <div class="form-row">
+      <label class="form-label" for="email">
+        Age:
+        <!-- <span class="field-error">
+          This is a required field.
+        </span> -->
+      </label>
+      <input class="form-control" type="number" name="age" id="age" formControlName="Age" required>
+    </div>
+  </div>
+
+  </form>

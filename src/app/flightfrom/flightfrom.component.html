@@ -1,0 +1,28 @@
+
+  <div class="card ">
+    <div class="leftside">
+    <h6>{{twoWay.Source_Loc}}</h6>
+    <h6>{{twoWay.Destination}}</h6>
+    <h6>{{twoWay.Dep_Date | date}}</h6>
+    <h6>{{twoWay.Dep_Time| date:'shortTime'}}</h6>
+  </div>
+  
+    <div class="rightside">
+      <div class="row">
+        <h5>First Class: Rs. {{twoWay.Price_FC}}</h5>
+   
+    <input type="radio" [hidden]="this.serviceObject.searched.Selected_Class=='BC' || this.serviceObject.searched.Selected_Class=='EC' " name="FC" id="selected_flt_FC"  (change)="onCheckFC()">
+  </div>
+    <div class="row">
+      <h5>Business Class: Rs. {{twoWay.Price_BC}}</h5>
+  
+      <input type="radio" [hidden]="this.serviceObject.searched.Selected_Class=='FC' || this.serviceObject.searched.Selected_Class=='EC'" name="FC" id="selected_flt_BC" name="BC" id="selected_flt"  (change)="onCheckBC()">
+    </div>
+      <div class="row">
+        <h5>Economy Class: Rs. {{twoWay.Price_EC}}</h5>
+   
+        <input type="radio" [hidden]="this.serviceObject.searched.Selected_Class=='FC' || this.serviceObject.searched.Selected_Class=='BC' " name="FC" id="selected_flt_EC" name="EC" id="selected_flt"  (change)="onCheckEC()">
+      </div>
+      </div>
+      
+  </div>

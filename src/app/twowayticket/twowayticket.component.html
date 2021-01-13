@@ -1,0 +1,92 @@
+<div class="wrappering">
+
+  <div class="buttons">
+    <a routerLink="/checkout"><button class="btn btn-info" style="padding:5px" [hidden]="this.passengerService.searched.payment=='done'" >Proceed to payment</button><br><br></a>
+    <a routerLink=""><button class="btn btn-info" (click)="SavePDF()" style="padding:5px" [hidden]="this.passengerService.searched.payment=='notdone'">Download tickets</button></a>
+  </div>
+
+<div class="container" >  
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-10 ticket ">
+        <h6 class="text-center pt-3 pb-3 "> Online Reservation</h6>
+        
+   <table>
+    <td class="text-capitalize">{{this.passengerService.searched.Source_Loc}}
+       <span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg></span> {{this.passengerService.searched.Destination}}</td>     
+      <tr>         
+        <td>
+          {{this.passengerService.searched.Dep_Date |date}}
+          {{this.passengerService.selectedSchedule.Dep_Time |date: 'shortTime'}}
+        </td>
+            </tr>
+   </table>
+   <table>
+    <td class="text-capitalize">{{this.passengerService.searched.Destination}}
+       <span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      </svg></span> {{this.passengerService.searched.Source_Loc}}</td>     
+      <tr>         
+        <td>
+          {{this.passengerService.searched.return_date |date}}
+          {{this.passengerService.selectedReturnSchedule.Dep_Time |date: 'shortTime'}}
+        </td>
+            </tr>
+            <tr>
+              {{this.passengerService.searched.Selected_Class}}
+            </tr>
+   </table>
+        <table class="table ps_details">
+          <tr>
+            <th>Passenger Details</th>
+            <!-- <th>Ticket Id</th> -->
+            <th>Seat No</th>
+            
+            
+            
+          </tr>
+          <tr>
+            
+          
+        
+            <td>
+              <div *ngFor="let item of passengers">
+              <b>{{item["Name"]}}</b> <br>
+              <span>{{item["Email"]}}</span> <br>
+              <!-- <span>{{this.passengerService.passengers.Contact}}</span> -->
+            </div>
+            </td>
+
+            <td>
+              <div *ngFor="let item of this.passengerService.searched.Selected_Seats">
+              <span>{{item}}</span> <br>  
+              <br><br>          
+            </div>
+            </td>
+             <!-- <td >
+               <div *ngFor="let item of this.passengerService.searched.Selected_Seats">
+             <span>{{this.passengerService.searched.Selected_Price}}</span><br>  
+             <br><br> </div>       
+            </td> -->
+             <!-- <td>{{createTicket.journey.fare}} </td> -->
+          </tr>
+        </table>
+        <table>
+          <h4>Total: Rs. {{this.amount}}</h4>
+        </table>
+    </div>
+
+    <div class="row">
+      <!-- <p style="color:red">**Please carry a hard copy of your boarding pass</p> -->
+     
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+

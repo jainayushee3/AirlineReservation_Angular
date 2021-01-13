@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+
+      
+        <div class="login" >
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h1 class="login-heading mb-4">Login</h1>
+                <form #loginForm="ngForm">
+                  <label >Email address</label>
+                  <div class="form-label-group">
+                    <input type="email" #mail="ngModel" [(ngModel)]="userLogin.Email" name="inputEmail" class="form-control" required maxlength="30">
+                  <!-- <div *ngIf="mail.touched">
+                    <small class="text-danger" *ngIf="mail.error.required">UserName is required</small> 
+                  </div> -->
+                    
+                  </div>
+  <br>
+                  <label>Password</label>
+                  <div class="form-label-group">
+                    <input type="password" name="inputPassword" #pass="ngModel" [(ngModel)]="userLogin.Password" class="form-control" required maxlength="10">
+                    <!-- <div *ngIf="pass.touched">
+                      <small class="text-danger" *ngIf="pass.error.required">Password is required</small> 
+                    </div> -->
+                  </div>
+                   <br>
+  <div>
+    <small class="text-danger">{{msg}}</small>
+  </div>
+  <!-- <div>
+    <h5>{{ user | json }}</h5>
+  </div> -->
+  <br>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" (click)="onLogin()" [disabled]="loginForm.form.invalid ">Login</button>
+                  <div class="text-center">
+                    <a class="small" routerLink="/ResetPassword" >Forgot password?</a></div>
+                    <div class="text-center">
+                      <a routerLink="/register" class="small" >Not registered?</a></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  

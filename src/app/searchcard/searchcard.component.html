@@ -1,54 +1,77 @@
 <div class="wrapper">
   
   <div class="card-content">
-   
+ 
     <br><br>
     <div class="row">
       <div class="col-6 " style="float:right"> 
         <label for="Source">Source:</label>
-        <select class="form-control"></select>
+        <select class="form-control" [(ngModel)]="this.serviceFlight.searched.Source_Loc" >
+          <!-- <option value="" selected disabled hidden>Choose</option> -->
+          <option *ngFor="let s of source" >{{s}}</option>
+        </select>
         
       </div> 
       
-        <div class="col-6 " style="float:right"> 
+    <div class="col-6 " style="float:right"> 
           <label for="Source">Destination:</label>
-          <select class="form-control"></select>
+          <select class="form-control" [(ngModel)]="this.serviceFlight.searched.Destination">
+          <!-- <option value="" selected disabled hidden>Choose</option> -->
+          <option *ngFor="let d of destination">{{d}}</option>
+          </select>
         </div>
     </div>
     <br>
 
     <div class="row">
+      <div class="col-6 centrebtn">
+        <label>One Way</label>
+  <input  style="margin-left: 10px;"type="radio" name="one" id="one" value="one" [(ngModel)]="this.serviceFlight.searched.ticket_type" >
+      </div>
+      <div class="col-6 centrebtn">
+  <label for="male">Round Trip </label>
+    <input  style="margin-left: 10px;" type="radio" name="two" id="two" value="two" [(ngModel)]="this.serviceFlight.searched.ticket_type"  > </div> 
+      </div>
+    <br>
+
+    <div class="row">
       <div class="col-6 " style="float:right"> 
         <label for="DD">Departure Date</label>
-    <input type="date" class="form-control"></div>
+    <input type="date" class="form-control" name="to"  id="to"[(ngModel)]="this.serviceFlight.searched.Dep_Date"  required>
+    
+  
+  </div>
       
         <div class="col-6 " style="float:right"> 
           <label for="RD">Return Date:</label>
           <br>
-          <input type="date" class="form-control"><br></div>
+          <input [disabled]="this.serviceFlight.searched.ticket_type=='one'" name="from"  id="from" type="date" class="form-control" [(ngModel)]="this.serviceFlight.searched.return_date"  ><br></div>
     </div>
     <br>
-    <div class="row">
-      <div class="col-6 centrebtn">
-        <label for="male">One Way</label>
-  <input type="radio" name="gender" id="male">
-      </div>
-      <div class="col-6 centrebtn">
-  <label for="male">Round Trip </label>
-    <input type="radio" name="gender" id="male" value="male"> </div> 
-      </div>
+    <div class="row centrebtn">
+      <label for="number">Number of Passengers:</label>
+      <select class="form-control" style="width: 60px; margin-left: 10px;" [(ngModel)]="this.serviceFlight.searched.number_of_passengers">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <br>
+
+    
       <br>
 
       <div class="row" style="align-items: center;">
         <div class="col" >
-      <button class="btn color centrebtn" style="width: 300px; margin:0 auto"> Search Flights</button></div>
-      </div>
-      
+      <button class="btn color centrebtn" style="width:300px; margin:0 auto" (click)="onSubmit()" >Search Flights</button></div>
+      </div> 
+         
     </div>
-
-
-    
   </div> 
+
+  
 
 
 

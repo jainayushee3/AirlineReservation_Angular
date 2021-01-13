@@ -1,0 +1,27 @@
+<app-header-links></app-header-links>
+
+
+<table class="table table-hover table-bordered table-responsive" align="center" style="padding:20px">
+    <thead class="table-primary">
+      <tr>
+        <th scope="col">Flight ID</th>
+        <th scope="col">Business Class Capacity</th>
+        <th scope="col">First Class Capacity</th>
+        <th scope="col">Economic Class Capacity</th>
+        <th scope="col">Flight Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <th scope="row">{{flight.Flight_ID}}</th>
+        <td>{{ flight.BC_Capacity }}</td>
+        <td>{{ flight.FC_Capacity }}</td>
+        <td>{{ flight.EC_Capacity }}</td>
+        <td>{{ flight.status }}</td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+  
+  

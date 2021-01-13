@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row ">
+   
+    <div class="col">
+      <div class="login">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="login-heading mb-4">Welcome!</h1>
+              <div>
+                <small class="text-danger">{{msg}}</small>
+              </div>
+              <form #userForm="ngForm">
+                  <label>First Name</label>
+                  <div class="form-label-group">
+                      
+                      <input type="text" name="inputFirstName" #fname="ngModel" class="form-control" [(ngModel)]="user.First_Name" pattern="^[a-zA-Z\s ]+$" required maxlength="20" autofocus>
+                      <div *ngIf="fname.errors&&fname.touched">
+                      <small class="text-danger" *ngIf="fname.errors.required">First Name is a required field</small>
+                      <small class="text-danger" *ngIf="fname.errors.pattern">Name can contain alphabets only</small>
+                      </div>
+                    </div>
+<br>
+<label >Last Name</label>
+                    <div class="form-label-group">
+                      <input type="text" name="inputLastName" class="form-control" #lname="ngModel" [(ngModel)]="user.Last_Name" required pattern="^[a-zA-Z\s ]+$" required maxlength="20" autofocus>
+                      <div *ngIf="lname.errors&&lname.touched">
+                        <small class="text-danger" *ngIf="lname.errors.required">Last Name is a required field</small>
+                        <small class="text-danger" *ngIf="lname.errors.pattern">Name can contain alphabets only</small>
+                        </div>
+                    </div>
+<br>
+                    <label >Email address</label>
+                <div class="form-label-group">
+                  <input type="email" name="inputEmail" class="form-control" #mail="ngModel" [(ngModel)]="user.Email" required email autofocus>
+                  <div *ngIf="mail.errors&&mail.touched">
+                    <small class="text-danger" *ngIf="mail.errors.required">Email is a required field</small>
+                    <small class="text-danger" *ngIf="mail.errors.email">Enter valid Email</small>
+                  </div>
+                </div>
+<br>
+                <label >Contact number</label>
+                                      <div class="form-label-group">
+                                        <input type="tel" name="inputPhone" #phone=ngModel class="form-control" [(ngModel)]="user.Phone" pattern="^\d{10}$" required autofocus>
+                                        <div *ngIf="phone.errors&&phone.touched">
+                                          <small class="text-danger" *ngIf="phone.errors.required">Contact number is a required field</small>
+                                          <small class="text-danger" *ngIf="phone.errors.pattern">Enter valid phone number</small>
+                                          </div>
+                                      </div>                
+<br>
+                <label >Date of Birth</label>
+                                      <div class="form-label-group">
+                                        <input type="date" name="inputDOB"#dob="ngModel" class="form-control" [(ngModel)]="user.DOB" required autofocus>
+                                        <div *ngIf="dob.errors&&dob.touched">
+                                          <small class="text-danger" *ngIf="dob.errors.required">Date of Birth is a required field</small>
+                                          </div>
+                                      </div>                
+<br>
+<label>Password</label>
+                <div class="form-label-group">
+                  <input type="password" name="inputPassword" #pass="ngModel" class="form-control" [(ngModel)]="user.Password" required  maxlength="10" >
+                  <div *ngIf="pass.errors&&pass.touched">
+                    <small class="text-danger" *ngIf="pass.errors.required">Password is a required field</small>
+                    <!-- <small class="text-danger" *ngIf="pass.errors.pattern">Password should contain minimum eight characters, at least one letter, one number and one special character</small> -->
+                  </div>
+                </div>
+                <br>
+
+<!-- <br>
+                <label> Confirm Password</label>
+                                <div class="form-label-group">
+                                  <input type="password" name="inputPassword1" class="form-control"  required  maxlength="10" >
+                                </div> -->
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2 form-control " [disabled]="userForm.form.invalid "  type="submit" (click)="InsertUser()">Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

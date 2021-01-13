@@ -1,0 +1,11 @@
+.wrapper{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
+  background-color: azure;
+  height: 150vh;
+}
+
+input{
+  width: 500px;
+}
